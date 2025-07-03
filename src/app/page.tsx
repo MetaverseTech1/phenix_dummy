@@ -127,7 +127,7 @@ export default function RedirectPage() {
           fontSize: '1rem',
           marginTop: '1rem'
         }}>
-          Please update your bookmarks accordingly
+          Please update your bookmarks accordingly .
         </p>
       </div>
     </div>
