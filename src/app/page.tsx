@@ -1,103 +1,135 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import { useRouter } from 'next/navigation'
+
+export default function RedirectPage() {
+  const router = useRouter()
+
+  const handleRedirect = () => {
+    window.open('https://dhruvrugs.global', '_blank')
+  }
+
+  const handleBack = () => {
+    router.back()
+  }
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: '#f5f5f5',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '20px',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+    }}>
+      {/* <button 
+        onClick={handleBack}
+        style={{
+          position: 'absolute',
+          top: '20px',
+          left: '20px',
+          background: 'none',
+          border: '1px solid #ccc',
+          padding: '8px 16px',
+          borderRadius: '4px',
+          cursor: 'pointer',
+          fontSize: '13px',
+          color: '#666',
+          transition: 'all 0.2s ease'
+        }}
+        onMouseOver={(e) => {
+          const target = e.target as HTMLButtonElement;
+          target.style.backgroundColor = '#e9e9e9';
+          target.style.borderColor = '#999';
+        }}
+        onMouseOut={(e) => {
+          const target = e.target as HTMLButtonElement;
+          target.style.backgroundColor = 'transparent';
+          target.style.borderColor = '#ccc';
+        }}
+      >
+        Click to go back, hold to see history
+      </button> */}
+      
+      <div style={{
+        textAlign: 'center',
+        maxWidth: '500px',
+        width: '100%'
+      }}>
+        <h1 style={{
+          fontSize: '3rem',
+          fontWeight: '700',
+          color: '#2c3e50',
+          marginBottom: '0.5rem',
+          lineHeight: '1.2'
+        }}>
+          The Phenix Carpet
+        </h1>
+        <p style={{
+          fontSize: '1.5rem',
+          color: '#7f8c8d',
+          marginBottom: '2rem'
+        }}>
+          Is Now
+        </p>
+        
+        <h2 style={{
+          fontSize: '2.5rem',
+          fontWeight: '700',
+          color: '#3b82f6',
+          marginBottom: '0.5rem'
+        }}>
+          Dhruv Rugs
+        </h2>
+        <h3 style={{
+          fontSize: '1.5rem',
+          fontWeight: '600',
+          color: '#3b82f6',
+          marginBottom: '3rem'
+        }}>
+          International
+        </h3>
+        
+        <button
+          onClick={handleRedirect}
+          style={{
+            backgroundColor: '#3b82f6',
+            color: 'white',
+            border: 'none',
+            padding: '15px 30px',
+            fontSize: '1.1rem',
+            fontWeight: '600',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease',
+            marginBottom: '2rem'
+          }}
+          onMouseOver={(e) => {
+            const target = e.target as HTMLButtonElement;
+            target.style.backgroundColor = '#2563eb';
+            target.style.transform = 'translateY(-2px)';
+            target.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.3)';
+          }}
+          onMouseOut={(e) => {
+            const target = e.target as HTMLButtonElement;
+            target.style.backgroundColor = '#3b82f6';
+            target.style.transform = 'translateY(0)';
+            target.style.boxShadow = 'none';
+          }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          Visit Dhruv Rugs
+        </button>
+        
+        <p style={{
+          color: '#6b7280',
+          fontSize: '1rem',
+          marginTop: '1rem'
+        }}>
+          Please update your bookmarks accordingly
+        </p>
+      </div>
     </div>
-  );
+  )
 }
