@@ -5,10 +5,14 @@ export const metadata: Metadata = {
   description: 'The Phenix Carpet is now Dhruv Rugs International. Visit our new website.',
 }
 
-export default function RedirectLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return children
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
 }

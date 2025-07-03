@@ -1,16 +1,8 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
-
-export default function RedirectPage() {
-  const router = useRouter()
-
+export default function Home() {
   const handleRedirect = () => {
     window.open('https://dhruvrugs.global', '_blank')
-  }
-
-  const handleBack = () => {
-    router.back()
   }
 
   return (
@@ -24,34 +16,7 @@ export default function RedirectPage() {
       padding: '20px',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
     }}>
-      {/* <button 
-        onClick={handleBack}
-        style={{
-          position: 'absolute',
-          top: '20px',
-          left: '20px',
-          background: 'none',
-          border: '1px solid #ccc',
-          padding: '8px 16px',
-          borderRadius: '4px',
-          cursor: 'pointer',
-          fontSize: '13px',
-          color: '#666',
-          transition: 'all 0.2s ease'
-        }}
-        onMouseOver={(e) => {
-          const target = e.target as HTMLButtonElement;
-          target.style.backgroundColor = '#e9e9e9';
-          target.style.borderColor = '#999';
-        }}
-        onMouseOut={(e) => {
-          const target = e.target as HTMLButtonElement;
-          target.style.backgroundColor = 'transparent';
-          target.style.borderColor = '#ccc';
-        }}
-      >
-        Click to go back, hold to see history
-      </button> */}
+    
       
       <div style={{
         textAlign: 'center',
@@ -127,7 +92,7 @@ export default function RedirectPage() {
           fontSize: '1rem',
           marginTop: '1rem'
         }}>
-          Please update your bookmarks accordingly .
+          Please update your bookmarks accordingly
         </p>
       </div>
     </div>
